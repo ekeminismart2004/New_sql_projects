@@ -1,0 +1,19 @@
+SELECT first_quarter_jobs.job_title_short,
+        first_quarter_jobs.job_via,
+        first_quarter_jobs.job_posted_date ::DATE,
+        first_quarter_jobs.salary_year_avg
+FROM (    
+    SELECT *
+    FROM january_jobs
+    UNION ALL
+    SELECT *
+    FROM feb_jobs
+    UNION ALL
+    SELECT *
+    FROM march_jobs
+) AS first_quarter_jobs
+WHERE
+    first_quarter_jobs.salary_year_avg > 70000 AND
+    first_quarter_jobs.job_title_short = 'Data Analyst' AND
+    EXTRACT(MONTH FROM job_posted_date) = 3
+ORDER BY first_quarter_jobs.salary_year_avg DESC
