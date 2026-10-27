@@ -7,7 +7,7 @@ SQL queries? check them out here: [sql project folder](/project_sql/)
 # Tools I used
 - **SQL**
 - **PostgresSQL**
-- **isual Studio Code**
+- **visual Studio Code**
 - **Git & Github**
 
 # The Analysis
